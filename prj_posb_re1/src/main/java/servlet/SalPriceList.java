@@ -2,6 +2,9 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -28,8 +31,41 @@ public class SalPriceList extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		JSONObject obj1 = new JSONObject();
 		JSONArray jlist = new JSONArray();
+		Date date = new Date();
+		String pattrtn = "yyyyMMdd";
+		SimpleDateFormat sdf = new SimpleDateFormat(pattrtn);
+
+		int lastDate1 = Integer.parseInt(sdf.format(date));
+
+		Calendar week = Calendar.getInstance();
+		week.add(Calendar.DATE, -7);
+		SimpleDateFormat sdf1 = new SimpleDateFormat(pattrtn);
+
+		int startDate1 = Integer.parseInt(sdf1.format(week.getTime()));
+			
+		int startDate = 0;
+		int lastDate = 0;
+		String start = request.getParameter("startDate");
+		String last = request.getParameter("lastDate");
+		if(start == null) {
+			System.out.println("값이 없음");
+			startDate = startDate1 ;
+			lastDate = lastDate1;
+			System.out.println(startDate);
+			System.out.println(lastDate);
+			
+		}else if(start != null) {
+			
+			 startDate = Integer.parseInt(start.replace("-", ""));
+			 lastDate = Integer.parseInt(last.replace("-", ""));
+			
+		}
 		
-		List<OrderMenuDTO> totalList = dao.totalpriceList();
+	
+		
+	
+	
+		List<OrderMenuDTO> totalList = dao.totalpriceList(startDate,lastDate);
 		
 		for(int i =0;i<totalList.size();i++) {
 			

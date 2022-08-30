@@ -29,12 +29,13 @@ pageContext.setAttribute("breadList", breadList);
 <meta charset="UTF-8">
 <title>메뉴관리</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href = "CSS/menuManageMentCSS.css?ver=6">
+<link rel="stylesheet" type="text/css" href = "CSS/menuManageMentCSS.css?ver=7">
 <script src="JS/menuManageMentScript.js?ver=11"></script>
 
 </head>
 <body>
-<h3 style="text-align: center; color: #b72f42;">등 록 된 메 뉴 의 전 체 리 스 트</h3>
+<h3 style="text-align: center;">등록된 메뉴의 전체 리스트</h3>
+  
 <hr>
 <table id="allMenuList">
 <thead>
@@ -64,12 +65,10 @@ pageContext.setAttribute("breadList", breadList);
 	
 	</c:forEach>
 </div>
-<div>
-	<button id="menuUpdate">메뉴수정</button>
-	<button id="menuPlus">메뉴추가</button>
-	<button id="menuDelect">메뉴삭제</button>
-
-</div>
+<hr>
+<button id="menuUpdate" class="button">메뉴수정</button>
+	<button id="menuPlus" class="button">메뉴추가</button>
+	<button id="menuDelect" class="button">메뉴삭제</button>
 
 <div id="modal" class="modal-overlay">
 	 <div class="modal-window">
@@ -95,7 +94,9 @@ pageContext.setAttribute("breadList", breadList);
 
 <div id="modalupdate" class="modal-overlay1">
 	 <div class="modal-window1">
-            <div class="title1"><h2>메뉴수정</h2></div>
+            <div class="title1">
+            	<h2 style="text-align: center;">메뉴 수정</h2>
+            </div>
             <div class="close-area1">X</div>
             <div class="content1">
              

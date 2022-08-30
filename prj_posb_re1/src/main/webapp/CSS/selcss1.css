@@ -7,11 +7,19 @@ body{
 table, th, td {
 	border: 1px solid #bcbcbc;
 	text-align: center;
+	border-collapse: collapse;
+	
 }
 tr{
 	 height :50px;
 }
 
+.size{
+	
+    min-height: 100px;;
+	
+	
+}
 
 .box,.box4 {
 	width: 50px;

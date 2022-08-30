@@ -38,6 +38,20 @@ pageContext.setAttribute("PopMenu", popValueList);
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
+<style>
+#popMenu{
+width: 500px;
+height: 500px;
+text-align: center;
+font-size: 25px;
+margin: auto;
+border: 1px medium black;
+border-collapse: collapse;
+}
+
+
+
+</style>
 <script>
 	$(function() {
 		$("#datepicker1,#datepicker2")
@@ -135,17 +149,23 @@ pageContext.setAttribute("PopMenu", popValueList);
 	})
 </script>
 <body>
-	<h1>인기메뉴조회</h1>
-	* 팔린 수량이 1 이 아닌 제품만 표시 됩니다.*
+	<h1 style="text-align: center;">인기메뉴조회</h1>
+	<div style="text-align: center;">* 팔린 수량이 1 이 아닌 제품만 표시 됩니다.*
 	<br> 기존은  현재날짜 :
 	<%=startDate%>
 	로부터 일주일 전 기준으로 표시됩니다.
+	</div>
 	<br>
+	<div style="text-align: center;">
 	<input type="text" id="datepicker1" name="startDate"> &nbsp; &nbsp;
 	<input type="text" id="datepicker2" name="lastDate"> &nbsp;&nbsp;
 	<button id="search">검색</button>
+	</div>
 	<hr>
-	<table border="1">
+	<br>
+	
+	
+	<table border="1" id="popMenu">
 		<thead>
 			<tr>
 				<th>이름</th>
@@ -164,7 +184,7 @@ pageContext.setAttribute("PopMenu", popValueList);
 			</c:forEach>
 		</tbody>
 
-
 	</table>
+	
 </body>
 </html>

@@ -30,7 +30,7 @@ pageContext.setAttribute("breadList", breadList);
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href = "CSS/selcss1.css?ver=10">
+<link rel="stylesheet" type="text/css" href = "CSS/selcss1.css?ver=15">
 <script src="JS/selJavaScript1.js?ver=8"></script>
 
 </head>
@@ -54,6 +54,7 @@ pageContext.setAttribute("breadList", breadList);
 				</tr>
 			</thead>
 			<tbody class="orderBoard">
+		
 			</tbody>
 
 		</table>

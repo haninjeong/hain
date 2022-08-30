@@ -238,14 +238,14 @@ var pos = {
 		let product = '';
 		var amount = 1;
 		let no = $('.orderBoard').find('tr').length + 1;
-		product += '<tr>';
+		product +='<tr>';
 		product += '<td><input type="radio" class="radio" name="index"></td>';
 		product += '<td>' + no + '</td>';
 		product += '<td class="prdName">' + prdName + '</td>';
 		product += '<td class="prdprice">' + price + '</td>';
 		product += '<td><span class="amount">' + amount + '</span></td>';
 		product += '<td class="price">' + price + '</td><td></td>';
-		product += '</tr>';
+		product +='</tr>';
 		if (pos.searchOrderBoard(prdName)) {
 			// 있다면 수량을 증가시키는 함수 호출
 			pos.addAmount(prdName);
@@ -401,6 +401,7 @@ $(function() {
 		})
 
 	});
+	$('#ordermenu td').attr("style","word-break:break-all");
 	
 	
 })

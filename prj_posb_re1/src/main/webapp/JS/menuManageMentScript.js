@@ -217,7 +217,7 @@ $(function() {
 			let content = '';
 			content += '메뉴 번호 :<div id="menunum">' + no + '</div>';
 			content += '메뉴 이름 :<input type="text" id="titlename" value="' + name + '"><br>';
-			content += '메뉴 가격 :<input type="text" id="reprice" value="' + $price + '"><br>';
+			content += '메뉴 가격 :<input type="text" id="reprice" value="' + $price + '"><br><br>';
 			content += '<input type="button" class="setupdate" value="수정하기">';
 
 			$(".content1").append(content);

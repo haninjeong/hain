@@ -249,16 +249,18 @@ public class OrderMenuDAO {
 		
 		
 	}
-	public List<OrderMenuDTO> totalpriceList(){
+	public List<OrderMenuDTO> totalpriceList(int startDate,int lastDate){
 		con=db.dbConnect();
 		List<OrderMenuDTO>totalpriceList =new ArrayList<>();
 		String sql = "SELECT TO_CHAR(pay_date,'yyyy-mm-dd') AS JRNL_DT, SUM(totalprice) AS TAKEOUT_AMOUNT "+
 		"FROM ordermenu "+
-		"WHERE to_number(to_char(pay_date, 'yyyymmdd'))  BETWEEN 20220801   AND 20220817"+
+		"WHERE to_number(to_char(pay_date, 'yyyymmdd'))  BETWEEN ?   AND ?"+
 		"GROUP BY TO_CHAR(pay_date,'yyyy-mm-dd') ORDER BY TO_CHAR(pay_date,'yyyy-mm-dd') "; 
 		try {
-			stmt=con.createStatement();
-			rs=stmt.executeQuery(sql);
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, startDate);
+			pstmt.setInt(2, lastDate);
+			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				OrderMenuDTO dto = new OrderMenuDTO();
 				dto.setPay_date(rs.getDate(1));
